@@ -1616,10 +1616,10 @@ section,
 /* Animasi untuk slider */
 @keyframes infiniteslider {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   to {
-    transform: translateX(-1515px);
+    transform: translateX(100%);
   }
 }
 
