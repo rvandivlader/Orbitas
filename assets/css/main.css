@@ -1602,7 +1602,7 @@ section,
     margin: 0; /* Hilangkan margin bawaan dari ul */
     margin-bottom: 1%;
     gap: 15%;
-    animation: infiniteslider 20s infinite linear;
+    animation: infiniteslider 10s infinite linear;
 }
 
 .slider-list li {
@@ -1619,7 +1619,7 @@ section,
     transform: translateX(0%);
   }
   to {
-    transform: translateX(100%);
+    transform: translateX(-100%);
   }
 }
 
