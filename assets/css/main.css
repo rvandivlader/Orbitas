@@ -1602,7 +1602,7 @@ section,
     margin: 0; /* Hilangkan margin bawaan dari ul */
     margin-bottom: 1%;
     gap: 15%;
-    animation: infiniteslider 10s infinite linear;
+    animation: infiniteslider 36s infinite linear;
 }
 
 .slider-list li {
