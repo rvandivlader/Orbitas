@@ -1579,6 +1579,8 @@ section,
 
 .slider-container {
   background-color: #A3D8FF;
+  overflow: hidden; /* Supaya yang keluar area tersembunyi */
+  width: 100%;
 }
 
 .text-center{
