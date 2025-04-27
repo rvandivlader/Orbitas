@@ -1579,66 +1579,73 @@ section,
 
 .slider-container {
   background-color: #A3D8FF;
-  overflow: hidden; /* Supaya yang keluar area tersembunyi */
+  overflow: hidden;
   width: 100%;
 }
 
-.text-center{
+.text-center {
   text-align: center;
   color: #fff;
   font-family: "Poppins", sans-serif;
-  font-style: var(--body-color);
   font-weight: 600;
 }
 
 .slider-track {
-  overflow: hidden; /* Menyembunyikan bagian gambar yang terlewati */
+  display: flex;
+  width: calc(300px * 36); /* 18 gambar x 2 (karena diduplikat) x 300px rata-rata ukuran */
+  animation: infiniteslider 60s linear infinite;
 }
 
 .slider-list {
-    list-style: none; /* Hilangkan bullet points */
-    display: flex; /* Gunakan Flexbox untuk tata letak */
-    justify-content: left; /* Atur elemen sejajar di tengah secara horizontal */
-    align-items: center; /* Atur elemen sejajar secara vertikal */
-    padding: 0; /* Hilangkan padding bawaan dari ul */
-    margin: 0; /* Hilangkan margin bawaan dari ul */
-    margin-bottom: 1%;
-    gap: 15%;
-    animation: infiniteslider 10s infinite linear;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 80px;
 }
 
 .slider-list li {
-    margin: 0 10px; /* Tambahkan jarak antar elemen */
+  flex-shrink: 0;
 }
 
 .slider-list img {
-    display: block; /* Hilangkan jarak bawaan dari inline images */
+  display: block;
+  height: auto;
 }
 
 /* Animasi untuk slider */
 @keyframes infiniteslider {
   0% {
-    transform: translateX(0%);
+    transform: translateX(0);
   }
-  to {
-    transform: translateX(-100%);
+  100% {
+    transform: translateX(-50%); /* Geser separuh karena ada duplikat */
   }
 }
 
+/* Responsive */
 @media screen and (max-width: 767px) {
+  .slider-track {
+    animation: infiniteslider 80s linear infinite; /* Lebih lambat di mobile */
+  }
+  
   .slider-list {
-    gap: 10%; /* Mengurangi jarak antar logo */
-    animation: infiniteslider 10s infinite linear; /* Memperlambat animasi untuk layar lebih kecil */
+    gap: 40px;
   }
 
   .slider-list img {
-    width: 30px; /* Mengurangi ukuran logo untuk layar kecil */
+    width: 60px;
+  }
+
+  .text-center {
+    font-size: 12px;
   }
 
   .slider-container {
     margin-top: 2%;
   }
-
+  
   .text-center {
     font-size: 12px; /* Menyesuaikan ukuran teks untuk layar kecil */
   }
